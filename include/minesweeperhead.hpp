@@ -80,7 +80,7 @@ class Minefield {
         void frame() const;
         chtype open_cell(const Koords &) const;
         void print_screen() const;
-        void set_flag(const Koords &) const;
+        chtype set_flag(const Koords &) const;
         void print_value(const int i, const int j) const;
         Koords koords_to_relative(const Koords &) const;
 };

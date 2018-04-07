@@ -160,8 +160,10 @@ void Minefield::game()
                 }
                 break;
             case FLAG:
-                set_flag(currentKoords);
-                ++flagsN;
+                if (set_flag(currentKoords) == FLAG_VALUE)
+                    ++flagsN;
+                else
+                    --flagsN;
                 mvprintw(0, 0,"Number of mines = %i\nNumber of flags = %i", minesN_, flagsN);
                 move_at(currentKoords);
                 refresh();
@@ -175,7 +177,7 @@ void Minefield::game()
     return;
 }
 
-void Minefield::set_flag(const Koords &in) const
+chtype Minefield::set_flag(const Koords &in) const
 {
     Koords relativeKoords = koords_to_relative(in);
     if (screen_[relativeKoords.getY()][relativeKoords.getX()] == VOID_VALUE) {
@@ -188,7 +190,7 @@ void Minefield::set_flag(const Koords &in) const
         print_value(relativeKoords.getY(), relativeKoords.getX());
         move_at(in);
     }
-    return;
+    return screen_[relativeKoords.getY()][relativeKoords.getX()];
 }
 
 chtype Minefield::open_cell(const Koords &in) const
