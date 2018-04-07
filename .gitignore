@@ -1,0 +1,9 @@
+mineswepper
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+cmake_uninstall.cmake
+install_manifest.txt
+libcio.so
+libmw.so
+libsap.a
