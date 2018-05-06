@@ -42,7 +42,7 @@ void Minefield::field_generate(const Koords &first_cell)
     }
 
     std::vector<Koords> allCells;
-    std::vector<Koords>::iterator koordMine{};
+    std::remove_reference_t<decltype(allCells)>::iterator koordMine{};
     std::vector<Koords> mineStore(minesN_);
     allCells.reserve(field_.size() * field_[0]. size());
     for (int i{}; i < field_.size(); ++i) {

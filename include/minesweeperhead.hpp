@@ -72,8 +72,8 @@ class Minefield {
     public:
         Minefield(Complexity = Complexity{EASILY});
         ~Minefield();
-        void print() const;
-        void show() const;
+//      void print() const;
+//      void show() const;
         void game(); 
     private:
         void field_generate(const Koords &first_cell);

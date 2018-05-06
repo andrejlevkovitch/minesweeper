@@ -9,7 +9,7 @@ set(SRC_MAIN sources/main.cpp)
 file(GLOB SRC_MW "sources/libminesweeper/*.cpp")
 
 set (CMAKE_CXX_COMPILER clang++)
-add_definitions(-Wall -std=c++14 -g)
+add_definitions(-Wall -std=c++14)
 
 include_directories(include)
 
